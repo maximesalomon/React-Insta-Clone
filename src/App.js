@@ -23,18 +23,24 @@ class App extends Component {
   }
 
 
-  addNewComment = (event) => {
+  addNewComment = (event, idx) => {
     if (event.keyCode === 13) {
-      console.log(event.idx);
-      let newDummyData = this.state.dummyData.map((post) => {
-        let newComment = {
-          username: "maximesalomon", text: this.state.comment
-        }
-        post.comments.push(newComment)
-        return post;
-      })
+      console.log(idx);
+      let newComment = { username: "maximesalomon", text: this.state.comment }
+      let newDummyData = dummyData[idx].comments.push(newComment);
+
+      // let newDummyData = this.state.dummyData.map((post) => {
+      //   let newComment = {
+      //     username: "maximesalomon", text: this.state.comment
+      //   }
+      //   post.comments.push(newComment)
+      //   return post;
+      // })
       this.setState({ dummyData: newDummyData })
-      this.setState({comment: ''})
+      this.setState({ comment: '' })
+
+      // update localStorage
+      localStorage.setItem("comments", newDummyData )
     }
   }
 

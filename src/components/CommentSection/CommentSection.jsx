@@ -20,7 +20,7 @@ const CommentSection = (props) => {
                     idx = { props.idx }
                     onChange = { props.handleComment }
                     placeholder = "Add a comment..."
-                    onKeyDown = { props.addNewComment }
+                    onKeyDown = { (event) => props.addNewComment(event, props.idx) }
                 >
         
                 </input>
