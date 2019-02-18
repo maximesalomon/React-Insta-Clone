@@ -3,7 +3,6 @@ import './App.css';
 import SearchBar from './components/SearchBar/SearchBar.jsx' 
 import PostContainer from './components/PostContainer/PostContainer.jsx' 
 import './components/SearchBar/SearchBar.css'
-
 import dummyData from './dummy-data.js'
 
 class App extends Component {
@@ -48,7 +47,6 @@ class App extends Component {
                 <PostContainer
                   idx = { idx }
                   post = { post }
-                  dummyData = { this.state.dummyData === [] ? dummyData  : this.state.dummyData }
                   handleComment = { this.handleComment }
                   addNewComment = { this.addNewComment }
                 />

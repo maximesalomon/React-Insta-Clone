@@ -13,7 +13,6 @@ import save from './img/save.png';
 const PostContainer = (props) => {
     return (
         <div>
-            { console.log(props) }
             <div key={props.CommentSectionidx} className="postContainer">
                 <div className="postHeader">
                     <div className="headerUserThumbnail"><img src={props.post.thumbnailUrl} alt={props.post.username} height="30" width="30"></img></div>
@@ -48,23 +47,17 @@ const PostContainer = (props) => {
 };
 
 PostContainer.propTypes = {
-    dummyData: PropTypes.shape({
+    post: PropTypes.shape({
         username: PropTypes.string,
+        thumbnail: PropTypes.string,
+        imageUrl: PropTypes.string,
+        likes: PropTypes.number,
+        timestamp: PropTypes.string,
+        comments: PropTypes.shape({
+            username: PropTypes.string,
+            text: PropTypes.string,
+        })
     })
-  };
-
-// PostContainer.propTypes = {
-//     dummyData: PropTypes.shape({
-//         username: PropTypes.string,
-//         thumbnail: PropTypes.string,
-//         imageUrl: PropTypes.string,
-//         likes: PropTypes.number,
-//         timestamp: PropTypes.string,
-//         comments: PropTypes.shape({
-//         username: PropTypes.string,
-//         text: PropTypes.string,
-//         })
-//     })
-//   };
+};
 
 export default PostContainer;
