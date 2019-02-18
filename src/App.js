@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar/SearchBar.jsx'
 import PostContainer from './components/PostContainer/PostContainer.jsx' 
 import './components/SearchBar/SearchBar.css'
 import dummyData from './dummy-data.js'
+import ls from 'local-storage'
 
 class App extends Component {
   constructor() {
@@ -38,9 +39,6 @@ class App extends Component {
       // })
       this.setState({ dummyData: newDummyData })
       this.setState({ comment: '' })
-
-      // update localStorage
-      localStorage.setItem("comments", newDummyData )
     }
   }
 
@@ -48,6 +46,7 @@ class App extends Component {
     return (
       <div className="container">
         <SearchBar />
+        { ls.get('comment') } 
         <div className="contentContainer">
         {
               dummyData.map((post, idx) => (
