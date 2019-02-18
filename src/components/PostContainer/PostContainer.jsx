@@ -31,15 +31,18 @@ const PostContainer = (props) => {
                         <div className="saveAction"><img className="savePost" src={save} alt="Save" height="24" width="24" /></div>
                     </div>
                     <div className="likes">{props.post.likes} likes</div>
-                    {
+                    <CommentSection
+                        comments = { props.post.comments }
+                        idx = { props.idx }
+                        handleComment = { props.handleComment }
+                        addNewComment = { props.addNewComment }
+                    />
+                    {/* {
                         props.post.comments.map((comment, idx) => (
                             <CommentSection comments={comment} id={idx} />
                         ))
 
-                    }
-                    <div className="addComment">
-                        <input key={props.idx} id={props.idx} onChange={props.handleComment} placeholder="Add a comment..." onKeyDown={props.addNewComment}></input>
-                    </div>
+                    } */}
                 </div>
             </div>
         </div>
