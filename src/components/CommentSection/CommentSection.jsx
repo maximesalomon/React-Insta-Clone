@@ -23,6 +23,7 @@ class CommentSection extends React.Component {
                             <div key={comment.idx} className="comment">
                                 <p className="commentUserName">{comment.username}</p>
                                 <p className="commentContent">{comment.text}</p>
+                                {/* <p onClick={ this.props.deleteComment(this.props.id, idx)} className="commentDelete">x</p> */}
                             </div>
                         </div>
                     ))

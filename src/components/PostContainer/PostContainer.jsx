@@ -9,9 +9,6 @@ import send from './img/send.png';
 import save from './img/save.png';
 
 class PostContainer extends React.Component {
-    state = {
-        liked : false,
-    }
     
     render() {
         return (
@@ -27,7 +24,7 @@ class PostContainer extends React.Component {
                     <div className="postFooter">
                         <div className="postActions">
                             <div className="actions">
-                                <div><img onKeyDown={this.toggleLiked} onClick={ () => this.props.addLike(this.props.post.id)} className="heartPost" src={heart} alt="Heart" height="24" width="24" /></div>
+                                <div><img onClick={ () => this.props.addLike(this.props.post.id)} className="heartPost" src={heart} alt="Heart" height="24" width="24" /></div>
                                 <div><img className="commentPost" src={comment} alt="Comment" height="24" width="24" /></div>
                                 <div><img className="sendPost" src={send} alt="Send" height="24" width="24" /></div>
                             </div>

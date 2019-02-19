@@ -27,7 +27,7 @@ class App extends Component {
   addLike = (idx) => {
     let newDummyData = dummyData.map((post) => {
       if (post.id === idx) {
-        ++post.likes
+        post.likes++
       }
       return post;
     })
@@ -35,11 +35,13 @@ class App extends Component {
   }
 
   filterUserName = (search) => {
-    let newDummyData = dummyData.filter((post) => post.username === search);
-    console.log(newDummyData);
+    let newDummyData = dummyData.filter((post) => post.username.includes(search))
     this.setState({ dummyData: newDummyData })
-    console.log(dummyData);
   }
+
+  // deteleComment = (comment, idx) => {
+  //   console.log("deleted")
+  // }
 
   render() {
     console.log("rendered")
@@ -55,6 +57,7 @@ class App extends Component {
                   handleComment = { this.handleComment }
                   addNewComment = { this.addNewComment }
                   addLike = { this.addLike }
+                  deleteComment = { this.deleteComment }
                 />
               ))
           }
