@@ -6,6 +6,18 @@ import heart from './img/heart.png';
 import user from './img/user.png';
 
 class SearchBar extends React.Component {
+    state = {
+        searchValue: '',
+    }
+
+    onSubmit = (e) => {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            this.props.filterUserName(this.state.searchValue)
+            this.setState({ searchValue: ''})
+        }
+    }
+
     render() {
         return (
             <div className="navbarContainer">
@@ -18,8 +30,17 @@ class SearchBar extends React.Component {
                     <div className="searchInput">
                     <input
                         placeholder="Search"
+                        value={this.state.searchValue}
+                        onChange={event => this.setState({searchValue: event.target.value})}
+                        onKeyDown={this.onSubmit}
                     >
                     </input>
+
+                    {/* value={this.state.inputValue}
+                    key={this.props.id}
+                    placeholder="Add a comment..."
+                    onChange={event => this.setState({ inputValue: event.target.value })}
+                    onKeyDown={this.onSubmit} */}
 
 
                     </div>

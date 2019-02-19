@@ -12,10 +12,7 @@ class PostContainer extends React.Component {
     state = {
         liked : false,
     }
-
-    toggleLiked() {
-        console.log("toggled");
-    }
+    
     render() {
         return (
             <div>

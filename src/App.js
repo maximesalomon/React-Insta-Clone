@@ -21,26 +21,29 @@ class App extends Component {
       }
       return post;
     })
-
-    this.setState({ dummyData: newDummyData})
+    this.setState({ dummyData: newDummyData })
   }
 
   addLike = (idx) => {
     let newDummyData = dummyData.map((post) => {
       if (post.id === idx) {
-        let newLikes = post.likes + 1;
-        post.likes = newLikes;
+        ++post.likes
       }
       return post;
     })
+    this.setState({ dummyData: newDummyData })
+  }
 
-    this.setState({ dummyData: newDummyData})
+  filterUserName = (search) => {
+    let newDummyData = dummyData.filter((post) => post.username === search);
+    console.log(newDummyData);
+    this.setState({ dummyData: newDummyData })
   }
 
   render() {
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar filterUserName = { this.filterUserName } />
         <div className="contentContainer">
         {
               dummyData.map((post, idx) => (

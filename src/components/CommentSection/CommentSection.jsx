@@ -30,8 +30,8 @@ class CommentSection extends React.Component {
                 <div className="addComment">
                     <form>
                         <input
-                            value={this.state.inputValue}
                             key={this.props.id}
+                            value={this.state.inputValue}
                             placeholder="Add a comment..."
                             onChange={event => this.setState({ inputValue: event.target.value })}
                             onKeyDown={this.onSubmit}
