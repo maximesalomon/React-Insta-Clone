@@ -1,0 +1,74 @@
+.navbarContainer {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: height .2s ease-in-out;
+    height: 77px;
+}
+.navbar {
+    display: flex;
+    width: 1010px;
+    height: 77px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+/* LOGOS */
+
+.logos {
+    display: flex;
+    width: 377.5px;
+    margin-left: 20px;
+}
+
+.logo {
+    margin-right: 16px;
+}
+
+.bar {
+    height: 28px;
+    width: 0.5px;
+    background-color: black;
+}
+
+.instagram {
+    margin-left: 20px;
+}
+
+/* SEARCH INPUT */
+
+.searchInput input{
+    width: 215px;
+    background-color: #fafafa;
+    border: solid 1px #dbdbdb;
+    height: 24px;
+    border-radius: 3px;
+    color: #999;
+    cursor: text;
+    font-size: 14px;
+    font-weight: 300;
+    left: 0;
+    text-align: center;
+    top: 0;
+    z-index: 2;
+}
+
+/* SETTINGS */
+
+.settings {
+    display: flex;
+    justify-content: flex-end;
+    width: 377.5px;
+    margin-right: 20px;
+}
+
+.location {
+    margin-right: 30px;
+}
+
+.heart {
+    margin-right: 30px;
+}

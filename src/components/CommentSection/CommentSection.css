@@ -1,0 +1,27 @@
+/* Comments */
+
+.comments {
+    margin-left: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    display: flex;
+    padding-bottom: 7px;
+}
+
+.commentUserName {
+    font-weight: 600;
+    color: #262626;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.commentContent {
+    margin-left: 7px;
+    font-weight: 400;
+    color: #262626;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
