@@ -50,17 +50,19 @@ const PostContainer = (props) => {
 };
 
 PostContainer.propTypes = {
-    post: PropTypes.shape({
-        username: PropTypes.string.isRequired,
-        thumbnail: PropTypes.string,
-        imageUrl: PropTypes.string,
-        likes: PropTypes.number,
-        timestamp: PropTypes.string,
-        comments: PropTypes.shape({
-            username: PropTypes.string,
-            text: PropTypes.string,
-        })
-    }).isRequired,
+  post: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number,
+    timestamp: PropTypes.string,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        username: PropTypes.string,
+        text: PropTypes.string
+      })
+    ).isRequired
+  })
 };
 
 export default PostContainer;

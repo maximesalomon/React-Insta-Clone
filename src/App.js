@@ -18,14 +18,13 @@ class App extends Component {
 
     let newDummyData = dummyData.map((post) => {
       if (post.id === idx) {
-        let newComments = post.comments.concat(newComment);
+        let newComments = post.comments.concat({username: "maximesalomon", text: newComment});
         post.comments = newComments;
       }
       return post;
     })
 
-
-    this.setState({ dummyData: newDummyData, comment: '' })
+    this.setState({ dummyData: newDummyData})
   }
 
   render() {
@@ -34,8 +33,9 @@ class App extends Component {
         <SearchBar />
         <div className="contentContainer">
         {
-              dummyData.map((post) => (
+              dummyData.map((post, idx) => (
                 <PostContainer
+                  key = { idx } 
                   post = { post }
                   handleComment = { this.handleComment }
                   addNewComment = { this.addNewComment }

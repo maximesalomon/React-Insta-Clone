@@ -6,17 +6,20 @@ class CommentSection extends React.Component {
         inputValue: "",
     }
 
-    onSubmit() {
-        debugger;
-        this.props.addNewComment(this.state.inputValue, this.props.id)
+    onSubmit = (e) => {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            this.props.addNewComment(this.state.inputValue, this.props.id)
+            this.setState({ inputValue: ''})
+        }
     }
 
     render() {
         return (
             <>
                 {
-                    this.props.comments.map((comment) => (
-                        <div className="comments">
+                    this.props.comments.map((comment, idx) => (
+                        <div key={idx} className="comments">
                             <div key={comment.idx} className="comment">
                                 <p className="commentUserName">{comment.username}</p>
                                 <p className="commentContent">{comment.text}</p>
@@ -25,13 +28,16 @@ class CommentSection extends React.Component {
                     ))
                 }
                 <div className="addComment">
-                    <input
-                        key={this.props.id}
-                        placeholder="Add a comment..."
-                        onChange={event => this.setState({ inputValue: event.target.value })}
-                    >
-                    </input>
-                    <button onClick={this.onSubmit}>Submit</button>
+                    <form>
+                        <input
+                            value={this.state.inputValue}
+                            key={this.props.id}
+                            placeholder="Add a comment..."
+                            onChange={event => this.setState({ inputValue: event.target.value })}
+                            onKeyDown={this.onSubmit}
+                        >
+                        </input>
+                    </form>
                 </div>
             </>
         )
