@@ -38,15 +38,17 @@ class App extends Component {
     let newDummyData = dummyData.filter((post) => post.username === search);
     console.log(newDummyData);
     this.setState({ dummyData: newDummyData })
+    console.log(dummyData);
   }
 
   render() {
+    console.log("rendered")
     return (
       <div className="container">
         <SearchBar filterUserName = { this.filterUserName } />
         <div className="contentContainer">
-        {
-              dummyData.map((post, idx) => (
+          {
+              this.state.dummyData.map((post, idx) => (
                 <PostContainer
                   key = { idx }
                   post = { post }
