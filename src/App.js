@@ -9,27 +9,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      comment: '',
-      dummyData: [],
+      dummyData,
     }
   }
 
-  componentDidMount() {
-    this.setState({dummyData: dummyData})
-  }
+  addNewComment = (newComment, idx) => {
+    // let newDummyData = dummyData[idx].comments.concat(newComment);
 
-  handleComment = event => {
-    this.setState({comment: event.target.value})
-  }
+    let newDummyData = dummyData.map((post) => {
+      if (post.id === idx) {
+        let newComments = post.comments.concat(newComment);
+        post.comments = newComments;
+      }
+      return post;
+    })
 
 
-  addNewComment = (event, idx) => {
-    if (event.keyCode === 13) {
-      let newComment = { comments: { username: "maximesalomon", text: this.state.comment }}
-      let newDummyData = dummyData[idx].comments.concat(newComment);
-      this.setState({ dummyData: newDummyData })
-      this.setState({ comment: '' })
-    }
+    this.setState({ dummyData: newDummyData, comment: '' })
   }
 
   render() {
@@ -38,9 +34,8 @@ class App extends Component {
         <SearchBar />
         <div className="contentContainer">
         {
-              dummyData.map((post, idx) => (
+              dummyData.map((post) => (
                 <PostContainer
-                  idx = { idx }
                   post = { post }
                   handleComment = { this.handleComment }
                   addNewComment = { this.addNewComment }

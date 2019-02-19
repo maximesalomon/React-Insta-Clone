@@ -33,7 +33,7 @@ const PostContainer = (props) => {
                     <div className="likes">{props.post.likes} likes</div>
                     <CommentSection
                         comments = { props.post.comments }
-                        idx = { props.idx }
+                        id = { props.post.id }
                         handleComment = { props.handleComment }
                         addNewComment = { props.addNewComment }
                     />
