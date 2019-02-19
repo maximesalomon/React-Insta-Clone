@@ -51,7 +51,7 @@ const PostContainer = (props) => {
 
 PostContainer.propTypes = {
     post: PropTypes.shape({
-        username: PropTypes.string,
+        username: PropTypes.string.isRequired,
         thumbnail: PropTypes.string,
         imageUrl: PropTypes.string,
         likes: PropTypes.number,
@@ -60,7 +60,7 @@ PostContainer.propTypes = {
             username: PropTypes.string,
             text: PropTypes.string,
         })
-    })
+    }).isRequired,
 };
 
 export default PostContainer;

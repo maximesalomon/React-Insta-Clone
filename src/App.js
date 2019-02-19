@@ -4,7 +4,6 @@ import SearchBar from './components/SearchBar/SearchBar.jsx'
 import PostContainer from './components/PostContainer/PostContainer.jsx' 
 import './components/SearchBar/SearchBar.css'
 import dummyData from './dummy-data.js'
-import ls from 'local-storage'
 
 class App extends Component {
   constructor() {
@@ -26,17 +25,8 @@ class App extends Component {
 
   addNewComment = (event, idx) => {
     if (event.keyCode === 13) {
-      console.log(idx);
-      let newComment = { username: "maximesalomon", text: this.state.comment }
-      let newDummyData = dummyData[idx].comments.push(newComment);
-
-      // let newDummyData = this.state.dummyData.map((post) => {
-      //   let newComment = {
-      //     username: "maximesalomon", text: this.state.comment
-      //   }
-      //   post.comments.push(newComment)
-      //   return post;
-      // })
+      let newComment = { comments: { username: "maximesalomon", text: this.state.comment }}
+      let newDummyData = dummyData[idx].comments.concat(newComment);
       this.setState({ dummyData: newDummyData })
       this.setState({ comment: '' })
     }
@@ -46,7 +36,6 @@ class App extends Component {
     return (
       <div className="container">
         <SearchBar />
-        { ls.get('comment') } 
         <div className="contentContainer">
         {
               dummyData.map((post, idx) => (

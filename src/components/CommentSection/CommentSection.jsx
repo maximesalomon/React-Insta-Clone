@@ -22,28 +22,9 @@ const CommentSection = (props) => {
                     placeholder = "Add a comment..."
                     onKeyDown = { (event) => props.addNewComment(event, props.idx) }
                 >
-        
                 </input>
             </div>
         </>
-
-        // <>
-        //     <div className="comments">
-        //     <div key={props.id} className="comment">
-        //         <p className="commentUserName">{props.comments.username}</p>
-        //     </div>
-        //     </div>
-        //     <div className="addComment">
-        //         <input
-        //             key = { props.idx }
-        //             id = { props.idx }
-        //             onChange = { props.handleComment }
-        //             placeholder = "Add a comment..."
-        //             onKeyDown={props.addNewComment}
-        //         >
-        //         </input>
-        //     </div>
-        // </>
     )
 }
 
