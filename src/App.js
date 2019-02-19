@@ -14,12 +14,22 @@ class App extends Component {
   }
 
   addNewComment = (newComment, idx) => {
-    // let newDummyData = dummyData[idx].comments.concat(newComment);
-
     let newDummyData = dummyData.map((post) => {
       if (post.id === idx) {
         let newComments = post.comments.concat({username: "maximesalomon", text: newComment});
         post.comments = newComments;
+      }
+      return post;
+    })
+
+    this.setState({ dummyData: newDummyData})
+  }
+
+  addLike = (idx) => {
+    let newDummyData = dummyData.map((post) => {
+      if (post.id === idx) {
+        let newLikes = post.likes + 1;
+        post.likes = newLikes;
       }
       return post;
     })
@@ -35,10 +45,11 @@ class App extends Component {
         {
               dummyData.map((post, idx) => (
                 <PostContainer
-                  key = { idx } 
+                  key = { idx }
                   post = { post }
                   handleComment = { this.handleComment }
                   addNewComment = { this.addNewComment }
+                  addLike = { this.addLike }
                 />
               ))
           }
