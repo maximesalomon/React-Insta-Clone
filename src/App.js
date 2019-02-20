@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchBar from './components/SearchBar/SearchBar.jsx' 
-import PostContainer from './components/PostContainer/PostContainer.jsx' 
-import './components/SearchBar/SearchBar.css'
 import dummyData from './dummy-data.js'
+import PostPage from './components/PostContainer/PostsPage';
 
 class App extends Component {
   constructor() {
@@ -39,30 +37,15 @@ class App extends Component {
     this.setState({ dummyData: newDummyData })
   }
 
-  // deteleComment = (comment, idx) => {
-  //   console.log("deleted")
-  // }
-
   render() {
-    console.log("rendered")
     return (
       <div className="container">
-        <SearchBar filterUserName = { this.filterUserName } />
-        <div className="contentContainer">
-          {
-              this.state.dummyData.map((post, idx) => (
-                <PostContainer
-                  key = { idx }
-                  post = { post }
-                  handleComment = { this.handleComment }
-                  addNewComment = { this.addNewComment }
-                  addLike = { this.addLike }
-                  deleteComment = { this.deleteComment }
-                />
-              ))
-          }
-          <   div className="sideBar"></div>
-        </div>
+        <PostPage
+          dummyData = { this.state.dummyData }
+          addNewComment = { this.addNewComment }
+          addLike = { this.addLike }
+          filterUserName = { this.filterUserName }
+        />
       </div>
     );
   }
