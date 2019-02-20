@@ -8,16 +8,17 @@ const Authenticate = App => Login =>
         login: false,
       };
     }
-    isLoggingIn = () => {
-      this.setState({login: true})
-      localStorage.setItem('login', true);
-    }
     componentDidMount() {
-      if (!localStorage.getItem('login')) {
+      if (!localStorage.getItem('user')) {
         this.setState({ login: false });
       } else {
         this.setState({ login: true });
       }
+    }
+    isLoggingIn = () => {
+      this.setState({user: true})
+      localStorage.setItem('user', true);
+      window.location.reload();
     }
     render() {
       if (this.state.login === true) {
