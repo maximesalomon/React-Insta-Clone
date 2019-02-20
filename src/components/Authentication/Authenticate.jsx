@@ -17,7 +17,7 @@ const Authenticate = App => Login =>
     }
     isLoggingIn = () => {
       this.setState({user: true})
-      localStorage.setItem('user', true);
+      localStorage.setItem('user', JSON.stringify(true));
       window.location.reload();
     }
     render() {
