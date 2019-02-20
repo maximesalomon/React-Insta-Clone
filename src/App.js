@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data.js'
 import PostPage from './components/PostContainer/PostsPage';
+import Authenticate from './components/Authentication/Authenticate';
 
 class App extends Component {
   constructor() {
@@ -51,7 +52,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Authenticate(App);
 
 
 

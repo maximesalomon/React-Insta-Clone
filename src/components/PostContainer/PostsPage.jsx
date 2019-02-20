@@ -19,7 +19,7 @@ const PostPage = (props) => {
                         />
                     ))
                 }
-                <   div className="sideBar"></div>
+                <div className="sideBar"></div>
             </div>
         </>
     )
