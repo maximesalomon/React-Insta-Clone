@@ -10,6 +10,14 @@ const Authenticate = App => Login =>
     }
     isLoggingIn = () => {
       this.setState({login: true})
+      localStorage.setItem('login', true);
+    }
+    componentDidMount() {
+      if (!localStorage.getItem('login')) {
+        this.setState({ login: false });
+      } else {
+        this.setState({ login: true });
+      }
     }
     render() {
       if (this.state.login === true) {
