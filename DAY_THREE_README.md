@@ -44,7 +44,7 @@ const authenticate = App =>
   };
 ```
 
-- [] Build out the LoginPage component. You can design it how you like
+- [X] Build out the LoginPage component. You can design it how you like
 
   - In your `components` directory, create a directory called `Login` and add a new file called `Login.js`.
   - There should be a `username` input, a `password` input, and a `Login` button.
@@ -52,7 +52,7 @@ const authenticate = App =>
   - This login function should set a `username` on `localStorage`. You'll need to check local storage to see if a user is logged in.
   - Be sure to force the page to reload when a user logs in so that our component un-mounts and mounts again.
 
-- [] Extending the functionality of the HOC to conditionally render the `LoginPage` or the `App`
+- [X] Extending the functionality of the HOC to conditionally render the `LoginPage` or the `App`
 
   - First, we need to change our `authenticate` HOC to return a second function that will take in a second component (which will be the `LoginPage`). This will look like a "double arrow" function - `const authenticate = App => LoginPage => {}`.
   - In `App.js`, the component that is exported is the class component that our HOC returns. So invoke the HOC function twice (which is called currying) on the export line. The first time it's invoked, pass in `App`. The second time, pass in `LoginPage` (which you'll need to import here). ie - `export default higherOrderComp(FirstComponent)(SecondComponent)`

@@ -1,18 +1,21 @@
 import React from 'react';
 
-const Authenticate = App =>
+const Authenticate = App => Login =>
   class extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.state = {
-        login: true,
+        login: false,
       };
+    }
+    isLoggingIn = () => {
+      this.setState({login: true})
     }
     render() {
       if (this.state.login === true) {
-        return <App />
+        return <App />;
       }
-      return "hello";
+      return <Login isLoggingIn={this.isLoggingIn}/>;
     }
   };
 

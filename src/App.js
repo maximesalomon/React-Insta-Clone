@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data.js'
+import Authenticate from './components/Authentication/authenticate';
+import Login from './components/Authentication/Login';
 import PostPage from './components/PostContainer/PostsPage';
-import Authenticate from './components/Authentication/Authenticate';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       dummyData,
+      login: false,
     }
   }
 
@@ -39,21 +42,17 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <PostPage
-          dummyData = { this.state.dummyData }
-          addNewComment = { this.addNewComment }
-          addLike = { this.addLike }
-          filterUserName = { this.filterUserName }
-        />
-      </div>
-    );
+      return (
+          <div className="container">
+            <PostPage
+              dummyData = { this.state.dummyData }
+              addNewComment = { this.addNewComment }
+              addLike = { this.addLike }
+              filterUserName = { this.filterUserName }
+            />
+          </div>
+        );
+      }
   }
-}
 
-export default Authenticate(App);
-
-
-
-
+export default Authenticate(App)(Login);
