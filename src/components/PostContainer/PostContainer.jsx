@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection.jsx';
-import './PostContainer.css';
 
 import heart from './img/heart.png';
 import comment from './img/comment.png';
@@ -91,7 +90,7 @@ const Likes = styled.div `
     font-weight: 600;
     color: #262626;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 16px;   
 `
 
 class PostContainer extends React.Component {
@@ -114,7 +113,7 @@ class PostContainer extends React.Component {
                             </Actions>
                             <SaveAction src={save} alt="Save" height="24" width="24"></SaveAction>
                         </PostActions>
-                        <Likes>{this.props.post.likes}> likes</Likes>
+                        <Likes>{this.props.post.likes} likes</Likes>
                         <CommentSection
                             comments = { this.props.post.comments }
                             id = { this.props.post.id }
