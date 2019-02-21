@@ -1,7 +1,6 @@
 import React from 'react';
 import PostContainer from './PostContainer.jsx';
 import SearchBar from '/Users/maximesalomon/lambdaschool/React-Insta-Clone/src/components/SearchBar/SearchBar.jsx'
-import '/Users/maximesalomon/lambdaschool/React-Insta-Clone/src/components/SearchBar/SearchBar.css';
 
 const PostPage = (props) => {
 

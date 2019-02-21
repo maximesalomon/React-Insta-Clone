@@ -21,7 +21,7 @@ const LoginLogo = styled.div `
     margin-bottom: 14px;
     margin-left: 100px;
     display:flex;
-    justify-content: align-center;
+    justify-content: center;
 `
 
 const LoginForm = styled.div `
