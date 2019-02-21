@@ -33,18 +33,16 @@ const LoginInput = styled.input `
     margin-top: 5px;
     padding: 10px;
     background-color: #fafafa;
-    border-shadow: 0;
 `
 const Button = styled.button `
 margin-top: 14px;
     width: 284px;
     text-align: center;
-    abel="Phone number, username, or email"
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
     font-family: Helvetica, Arial, sans-serif;
-    color: #fff
+    color: #fff;
     padding: 5px;
     border-radius: 2px;
 
